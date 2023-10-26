@@ -15,7 +15,7 @@
     <h2>API v1</h2>
     <ul>
 	  <li>
-            <a href="https://sos2223-jul-pvl.ew.r.appspot.com/api/v2/workingplaces-stats">/workingplaces-stats</a>
+            <a href="https://sos2223-dic-pvl.ew.r.appspot.com/api/v2/workingplaces-stats">/workingplaces-stats</a>
         </li>
     </ul>
 
@@ -23,20 +23,20 @@
     <h2>API v2</h2>
     <ul>
 	  <li>
-            <a href="https://sos2223-jul-pvl.ew.r.appspot.com/api/v2/workingplaces-stats">/workingplaces-stats</a>
+            <a href="https://sos2223-dic-pvl.ew.r.appspot.com/api/v2/workingplaces-stats">/workingplaces-stats</a>
         </li>
     </ul>
 
     <h2>Repositorio</h2>
     <ul>
         <li>
-            <a href="https://github.com/pablovl95/sos2223-jul-pvl">pablovl95/SOS2223-jul-pvl</a>
+            <a href="https://github.com/pablovl95/sos2223-dic-pvl">pablovl95/SOS2223-dic-pvl</a>
         </li>
     </ul>
     <h2>Documentación POSTMAN</h2>
     <ul>
         <li>
-            <a href="https://sos2223-jul-pvl.ew.r.appspot.com/api/v1/workingplaces-stats/docs">
+            <a href="https://sos2223-dic-pvl.ew.r.appspot.com/api/v1/workingplaces-stats/docs">
             /workingplaces-stats/docs</a>(hecho por <a href="https://github.com/pablovl95">Pablo Vera López</a>)
         </li>
     </ul>
