@@ -109,11 +109,16 @@
                 
             </Form>    
             <div class="ImageContainer">
-  <div class="ImageBox">
-    <img class="Image" src={datam[0].box_art_url.replace('{width}', '100').replace('{height}', '100')} alt={datam[0].name}>
-    <a class="Title" href="">{datam[0].name}</a>
-  </div>  
+  <div class="ImageContainer">
+  {#if datam && datam.length > 0}
+    <div class="ImageBox">
+      <img class="Image" src={datam[0].box_art_url.replace('{width}', '100').replace('{height}', '100')} alt={datam[0].name}>
+      <a class="Title" href="">{datam[0].name}</a>
     </div>
+  {:else}
+    <p>No hay datos disponibles</p>
+  {/if}
+</div>
 </main>
 <style>
   .ImageBox {
