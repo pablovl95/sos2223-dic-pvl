@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "cd frontend && npm run build && cd .. && node index ",
+    "start": "node index ",
     "test-workingplaces-stats": "npx newman run ./testsPostman/backend-pvl.json -e ./testsPostman/env/localhost-pvl.json",
     "test-workingplaces-stats-gcloud": "npx newman run ./testsPostman/backend-pvl.json -e ./testsPostman/env/gcloud-pvl-v2.json",
     "test-gcloud": "npm run test-workingplaces-stats-gcloud",
