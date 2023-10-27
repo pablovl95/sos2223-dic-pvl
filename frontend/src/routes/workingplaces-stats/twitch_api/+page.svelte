@@ -12,10 +12,10 @@
     const token = "https://id.twitch.tv/oauth2/token";
     //let redirect_uri = "http://localhost:12345/workingplaces-stats/twitch_api"
     let response;
-    let redirect_uri = "https://sos2223-21.ew.r.appspot.com/workingplaces-stats/twitch_api"
+    let redirect_uri = "https://sos2223-dic-pvl.ew.r.appspot.com/workingplaces-stats/twitch_api"
     let code;
 
-    let playlistId;
+    let userId;
 
 
     onMount(async () => {
@@ -28,10 +28,9 @@
         code = urlParams.get('code');
         client_id = localStorage.getItem("client_id");
         client_secret = localStorage.getItem("client_secret");
-        playlistId = localStorage.getItem("playlistId");
+        userId = localStorage.getItem("userId");
         if ( code ){
             asignacion_code();
-            console.log("Hola");
         }
         else{
             acces_token = localStorage.getItem("acces_token");
@@ -43,7 +42,7 @@
         async function getAuth(){
         localStorage.setItem("client_id", client_id);
         localStorage.setItem("client_secret", client_secret);
-        localStorage.setItem("playlistId", playlistId);
+        localStorage.setItem("userId", userId);
         let url = auth+"?client_id=" + client_id+ "&response_type=code"+ "&redirect_uri=" + redirect_uri;
         window.location.href = url;
     }
@@ -82,13 +81,14 @@
     }
     async function getCanciones() {
       const authToken = acces_token;
-      const responsePlaylist = await fetch(`https://api.twitch.tv/helix/soundtrack/playlist?id=${playlistId}`, {
+      const responseUser = await fetch(`https://api.twitch.tv/helix/videos?user_id=123456`, {
         headers: {
           'Client-ID': client_id,
           'Authorization': `Bearer ${authToken}`
         }
       });
-        let datos = await responsePlaylist.json();
+        let datos = await responseUser.json();
+        console.log(datos)
         datam = datos.data;
     }
      
@@ -102,10 +102,10 @@
                     <Input type="text" name="text" id="clientId" bind:value={client_id}/>
                     <Label for="clientSecret">Client Secret:</Label>
                     <Input type="text" name="text" id="clientSecret" bind:value={client_secret}/>
-                    <Label for="playlistId">Playlist ID:</Label>
-                    <Input type="text" name="text" id="playlistId" bind:value={playlistId}/>
+                    <Label for="userId">User ID:</Label>
+                    <Input type="text" name="text" id="userId" bind:value={userId}/>
                     <Button color="primary" on:click={getAuth}>Pedir autorización</Button>
-                    <Button color="primary" on:click={getCanciones}>Actualizar playlist</Button>
+                    <Button color="primary" on:click={getCanciones}>Actualizar Videos</Button>
                 
             </Form>    
             <div class="ImageContainer">
