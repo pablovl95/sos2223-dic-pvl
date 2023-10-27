@@ -81,7 +81,7 @@
     }
     async function getCanciones() {
       const authToken = acces_token;
-      const responseUser = await fetch(`https://api.twitch.tv/helix/videos?game_id=21779`, {
+      const responseUser = await fetch(`https://api.twitch.tv/helix/games?name=Valorant`, {
         headers: {
           'Client-ID': client_id,
           'Authorization': `Bearer ${authToken}`

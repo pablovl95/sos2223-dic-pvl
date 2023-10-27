@@ -19,10 +19,7 @@
                     <a href="/workingplaces-stats/cat_api">/cat_api</a> - Uso de una api de fotos de gatos.
                 </li>
                 <li class ="li_mod">
-                    <a href="/workingplaces-stats/_api">/thesimpsons_api</a> - Uso de una api de los simpsons.
-                </li>
-                <li class ="li_mod">
-                    <a href="/workingplaces-stats/_api">/rickmorty_api</a> - Uso de una api de sos(G22) a través de un proxy propio.
+                    <a href="/workingplaces-stats/thesimpsons_api">/thesimpsons_api</a> - Uso de una api de los simpsons.
                 </li>
             </ul>
 

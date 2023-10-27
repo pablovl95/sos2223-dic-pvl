@@ -1,17 +1,22 @@
 <script>
-  let catImage = '';
+  let imagen = '';
 
   async function fetchCatImage() {
-    const response = await fetch('https://thecatapi.com/api/images/get?format=src&type=jpg');
-    catImage = response.url;
+    try {
+      const response = await fetch('https://api.thecatapi.com/v1/images/search');
+      const data = await response.json();
+      imagen = data[0].url;
+    } catch (error) {
+      console.error(error);
+    }
   }
 </script>
 
 <main>
   <h1>Fotos de Gatos</h1>
-  <button on:click={fetchCatImage}>Mostrar Otra Foto</button>
-  {#if catImage}
-    <img src={catImage} alt="Gato" />
+  <button on:click={fetchCatImage}>Mostrar Foto Aleatoria</button>
+  {#if imagen}
+    <img src="{imagen}" class="cat-image" />
   {/if}
 </main>
 
