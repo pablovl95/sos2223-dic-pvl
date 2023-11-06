@@ -187,10 +187,6 @@
                     <Input type="textarea" name="text" id="clientSecret" bind:value={client_secret_spotify}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="busqueda">Titulo de la Cancion</Label>
-                    <Input type="textarea" name="text" id="busqueda" bind:value={busqueda}/>
-                </FormGroup>
-                <FormGroup>
                     <Button color="primary" on:click={requestAuthorization}>Pedir autorización</Button>
                 </FormGroup>
                 
