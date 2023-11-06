@@ -12,8 +12,8 @@
 
     const AUTHORIZE = "https://accounts.spotify.com/authorize"
     const TOKEN = "https://accounts.spotify.com/api/token";
-    let redirect_uri = "http://localhost:12345/workingplaces-stats/spotify_searcher"
-    //let redirect_uri = "https://sos2223-dic-pvl.ew.r.appspot.com/workingplaces-stats/spotify_searcher"
+    //let redirect_uri = "http://localhost:12345/workingplaces-stats/spotify_searcher"
+    let redirect_uri = "https://sos2223-dic-pvl.ew.r.appspot.com/workingplaces-stats/spotify_searcher"
 
 
     let playlists = [];
