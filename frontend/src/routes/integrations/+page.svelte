@@ -21,6 +21,9 @@
                 <li class ="li_mod">
                     <a href="/workingplaces-stats/thesimpsons_api">/thesimpsons_api</a> - Uso de una api de los simpsons.
                 </li>
+                <li class ="li_mod">
+                    <a href="/workingplaces-stats/spotify_searcher">/spotify_searcher</a> - Uso de una api de spotify para buscar canciones por un titulo.
+                </li>
             </ul>
 
     <h4>Integraciones</h4>

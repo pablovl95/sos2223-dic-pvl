@@ -3,7 +3,7 @@ import { handler } from "./frontend/build/handler.js";
 import express from "express";
 import { LoadModulo_Pablo } from './backend/pvl/modulo-pvl.js';
 import { LoadModulo_Pablo_v2 } from './backend/pvl/modulo-pvl-v2.js';
-
+console.log("A");
 var app = express();
 
 app.use(cors());
@@ -17,5 +17,6 @@ LoadModulo_Pablo_v2(app);
 app.use(handler); 
 
 app.listen(port, () => {
-    console.log(`Server escuchando en el puerto ${port}`);
+    console.log("B");console.log(`Server escuchando en el puerto ${port}`);
 });
+console.log("C");

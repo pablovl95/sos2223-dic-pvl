@@ -1,4 +1,4 @@
-//Importaciones
+console.log("D");//Importaciones
 import {JSONWP} from './Datos/Datos.js'
 
 const ruta = "/api/v2/workingplaces-stats";
@@ -6,9 +6,9 @@ const provincias =["Andalucía", "Jaén", "Almería", "Sevilla", "Huelva", "Mál
 import Datastore from 'nedb';
 import request from 'request';
 var db = new Datastore();
-
+console.log("E");
 function LoadModulo_Pablo_v2(app){
-
+console.log("F");
         //___________________________________________________PROXY________________________________________________\\
         
         app.use(ruta +'/proxy', (req, res) => {
@@ -207,14 +207,14 @@ function LoadModulo_Pablo_v2(app){
         });
             
         //__________________________________________________POSTS_________________________________________________\\
-                                                        //POST ruta\\
+console.log("G");                                                        //POST ruta\\
         app.post(ruta, (req, res) => {
-        console.log("new post attempt to /workingplaces-stats");
+        console.log("H");console.log("new post attempt to /workingplaces-stats");
         console.log(req.body);
         if (!req.body || !req.body.province || !req.body.work_place || !req.body.percentage_structure || !req.body.variation_rating) {
             res.status(400).send("Data needs to be inserted or fields are missing.");
         } else {
-            const newData = req.body;
+            console.log("I");const newData = req.body;
             db.find({
                 province: newData.province,
                 year: newData.year,
@@ -222,28 +222,28 @@ function LoadModulo_Pablo_v2(app){
                 percentage_structure:newData.percentage_structure,
                 variation_rating:newData.variation_rating,
             }, (err, docs) => {
-                console.log("Este es el doc")
+                console.log("J");console.log("Este es el doc")
                 console.log(docs[0]);
                 if (docs.length > 0) {
-                    res.status(409).send("The resource already exists.");
+                    console.log("K");res.status(409).send("The resource already exists.");
                 } else if (!provincias.includes(req.body.province)){
                     res.status(409).send("The province must be in Andalucía.");
                 }                 
                 else {
-                    db.insert(newData, (err, doc) => {
+                    console.log("L");db.insert(newData, (err, doc) => {
                         if (err) {
                             res.status(500).send(`Something has gone wrong: ${err}.`);
                         } else {
-                            console.log(`newData = ${JSON.stringify(doc, null, 2)}`);
+                            console.log("M");console.log(`newData = ${JSON.stringify(doc, null, 2)}`);
                             console.log("New POST to /workingplaces-stats");
                             res.status(201).send("The resource has been created successfully.");
                         }
-                    });
+                    console.log("N");});
                 }
-            });
+            console.log("O");});
         }
-    });
-
+    console.log("P");});
+console.log("Q");
 
        
                                    //POST NOT ALLOWED\\
@@ -299,7 +299,7 @@ function LoadModulo_Pablo_v2(app){
             console.log('Put not Allowed');
             response.sendStatus(405);
         });
-    
+console.log("R");    
                                             //CORRECT PUT\\
 app.put(ruta + '/:province/:year', (request, response) => {
     
@@ -340,5 +340,5 @@ app.put(ruta + '/:province/:year', (request, response) => {
         }
     });
 });}
-
+console.log("S");
 export {LoadModulo_Pablo_v2};
